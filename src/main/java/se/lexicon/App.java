@@ -15,8 +15,6 @@ public class App
         Person person = new Person();
         Person ishu = new Person(2,"ishu", "sankar");
         person.loanBook(2, ishu, Books);
-        Person swetha = new Person(3,"swetha","sree");
-        person.loanBook( 2, swetha,Books);
 
         for (int i = 0; i < Books.size(); i++)
         {
