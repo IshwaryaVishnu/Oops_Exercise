@@ -1,26 +1,27 @@
 package se.lexicon;
+
 import java.util.ArrayList;
 
-public class App 
-{
-    public static void main( String[] args )
-    {
-        Book book = new Book();
-        book.addBook(new Book( 1, "Ponniyin Selvan", "kalki", true));
-        book.addBook(new Book( 2 ,"ramayan", "valmigi", true));
+public class App {
+    public static void main(String[] args) {
+        Book book1 = new Book(1, "Ponniyin Selvan", "kalki");
+        Book book2 = new Book(2, "ramayan", "valmigi");
 
+        Person ishu = new Person(2, "ishu", "sankar");
 
-        ArrayList<Book> Books = book.showBooks();
+        System.out.println(book1.getBookInformation());
+        System.out.println(book2.getBookInformation());
+        System.out.println("-----------------------");
+        ishu.loanBook(book1);
 
-        Person person = new Person();
-        Person ishu = new Person(2,"ishu", "sankar");
-        person.loanBook(2, ishu, Books);
+        System.out.println(book1.getBookInformation());
+        System.out.println(book2.getBookInformation());
+        System.out.println("-----------------------");
 
-        for (int i = 0; i < Books.size(); i++)
-        {
-            System.out.println(Books.get(i).getTitle());
-        }
+        ishu.loanBook(book2);
 
-        System.out.println(book.showPerson(1, Books).getFirstName());
+        System.out.println(book1.getBookInformation());
+        System.out.println(book2.getBookInformation());
+
     }
 }
